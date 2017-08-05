@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/lib/Button';
 import Main from './main';
 
 class App extends Component {
-  
+
   //_const
   constructor() {
     super();
@@ -21,7 +21,7 @@ class App extends Component {
           <h2>{this.state.title}</h2>
         </div>
         <p className="App-intro">
-          <Main />
+          <Main/>
         </p>
       </div>
     );
