@@ -92,7 +92,7 @@ class main extends Component {
     calculate( ){
       const _promotioncode = this.state.promotion
       const _subtotal = this.state.subtotal
-
+      this.defaultPro( 0 )
       // The bill over 6000
       if( _subtotal >= 6000 ){
 
@@ -152,7 +152,7 @@ class main extends Component {
       console.log('LUCKY TWO')
       const _subtotal = this.state.subtotal
       this.setState( { discount: this.getDiscount( _subtotal, 20) } )
-      this.setAmount( _subtotal, this.getDiscount( _subtotal, 15))
+      this.setAmount( _subtotal, this.getDiscount( _subtotal, 20))
     }
 
     fourPayThree(){
@@ -218,11 +218,11 @@ class main extends Component {
             <div className="panel panel-default">
               <div className="panel-body">
                 <h2>BILL</h2>
-                <h3>Customers: {this.state.customer} ฿</h3>
-                  <h3>Sub total: {this.state.subtotal} ฿</h3>
-                {this.state.code!== undefined ? (<div id="display">Code: {this.state.code}</div>) : ('')}
-                {this.state.discount ? (<div id="display">Discount: {this.state.discount} ฿</div>) : ('')}
-                  <h3>Grand total: {this.state.amount} ฿</h3>
+                <h3>Customers: <span className="right">{this.state.customer} ฿</span></h3>
+                  <h3>Sub total: <span className="right">{this.state.subtotal} ฿</span></h3>
+                  {this.state.code!== undefined ? (<h3>Code: <span className="right">(this.state) {this.state.code}</span></h3>) : ('')}
+                  {this.state.discount ? (<h3>Discount: <span className="right">{this.state.discount} ฿</span></h3>) : ('')}
+                  <h3>Grand total: <span className="right">{this.state.amount} ฿</span></h3>
               </div>
             </div>
           </div>
