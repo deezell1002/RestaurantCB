@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import Button from 'react-bootstrap/lib/Button';
 import Main from './main';
 
 class App extends Component {
@@ -20,9 +19,9 @@ class App extends Component {
         <div className="App-header">
           <h2>{this.state.title}</h2>
         </div>
-        <p className="App-intro">
+        <div className="container" id="App-intro">
           <Main/>
-        </p>
+        </div>
       </div>
     );
   }
