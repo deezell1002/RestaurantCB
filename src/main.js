@@ -117,7 +117,8 @@ class main extends Component {
       if( code === 'LUCKY ONE' ){
         console.log('LUCKY ONE')
         this.setState({
-          code: code
+          code: code,
+          code_type: '15%'
         })
         this.luckyOne()
       }else if( code === 'LUCKY TWO' ){
@@ -125,7 +126,8 @@ class main extends Component {
         if( this.state.customer == 2){
           console.log('LUCKY TWO')
           this.setState({
-            code: code
+            code: code,
+            code_type: '20%'
           })
           this.luckyTwo()
         }
@@ -220,7 +222,7 @@ class main extends Component {
                 <h2>BILL</h2>
                 <h3>Customers: <span className="right">{this.state.customer} ฿</span></h3>
                   <h3>Sub total: <span className="right">{this.state.subtotal} ฿</span></h3>
-                  {this.state.code!== undefined ? (<h3>Code: <span className="right">(this.state) {this.state.code}</span></h3>) : ('')}
+                  {this.state.code!== undefined ? (<h3>Code: <span className="right">({this.state.code_type}) {this.state.code}</span></h3>) : ('')}
                   {this.state.discount ? (<h3>Discount: <span className="right">{this.state.discount} ฿</span></h3>) : ('')}
                   <h3>Grand total: <span className="right">{this.state.amount} ฿</span></h3>
               </div>
